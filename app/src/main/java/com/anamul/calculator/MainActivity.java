@@ -188,6 +188,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
 
             case R.id.btn_delete: {
+                if (txt_display != null){
+                    String delete = txt_display.getText ().toString ();
+                    delete = delete.substring ( delete.length () -1 ,0 );
+                    txt_display.setText ( delete );
+                }else {
+                    Toast.makeText ( this, "No Value Here !!", Toast.LENGTH_SHORT ).show ();
+                }
 
             }
 
