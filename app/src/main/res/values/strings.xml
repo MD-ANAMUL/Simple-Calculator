@@ -1,0 +1,32 @@
+<resources>
+    <string name="app_name">Calculator</string>
+    <string name="demo_text">
+        This is simple calculator.Just try to make a simple android application software.
+    </string>
+    <string name="gmail_com">example @ gmail.com</string>
+    <string name="equal">=</string>
+    <string name="plus">+</string>
+    <string name="minus">-</string>
+    <string name="multiplication">x</string>
+    <string name="divide">/</string>
+    <string name="dot">.</string>
+    <string name="three">3</string>
+    <string name="clear">C</string>
+    <string name="deleted">DEL</string>
+    <string name="simple_calculator">Simple Calculator</string>
+    <string name="hintss">00</string>
+    <string name="mr">MR</string>
+    <string name="_7">7</string>
+    <string name="_4">4</string>
+    <string name="_1">1</string>
+    <string name="mc">MC</string>
+    <string name="ce">CE</string>
+    <string name="_8">8</string>
+    <string name="_5">5</string>
+    <string name="_2">2</string>
+    <string name="_0">0</string>
+    <string name="plmi">+-</string>
+    <string name="percent">%</string>
+    <string name="_9">9</string>
+    <string name="_6">6</string>
+</resources>
