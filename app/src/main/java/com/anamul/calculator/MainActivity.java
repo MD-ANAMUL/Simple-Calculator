@@ -16,7 +16,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public Button btn1, btn2, btn3, btn4, btn5, btn6, btn7, btn8, btn9, btn0, btnC, btnD, btn_equal,
             btn_addition, btn_multn, btn_min, btn_divided;
     public TextView txt_display, txt_s_display;
-    boolean bol_add, bol_minus, bol_multi, bol_divide,del;
+    boolean bol_add, bol_minus, bol_multi, bol_divide;
     int num, numS;
 //    double number, numbers;
 
