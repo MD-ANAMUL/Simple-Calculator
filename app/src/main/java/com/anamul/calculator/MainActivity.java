@@ -193,7 +193,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.btn_delete: {
                 String delete = txt_display.getText ().toString ();
                 if ( delete.length () >=1){
-                   delete = delete.substring ( -0,delete.length () -1 );
+                   delete = delete.substring (0,delete.length () -1 );
                     txt_display.setText ( delete );
                 }else if (delete.length () <= 1){
                     txt_display.setText ( "" );
