@@ -1,6 +1,7 @@
 package com.anamul.calculator;
 
 import android.annotation.SuppressLint;
+import android.net.wifi.p2p.WifiP2pManager;
 import android.os.Bundle;
 import android.view.View;
 import android.view.WindowManager;
@@ -15,9 +16,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public Button btn1, btn2, btn3, btn4, btn5, btn6, btn7, btn8, btn9, btn0, btnC, btnD, btn_equal,
             btn_addition, btn_multn, btn_min, btn_divided;
     public TextView txt_display, txt_s_display;
-    boolean bol_add, bol_minus, bol_multi, bol_divide;
+    boolean bol_add, bol_minus, bol_multi, bol_divide,del;
     int num, numS;
-    double number, numbers;
+//    double number, numbers;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +31,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
         allInit ();
         allButtonsClick ();
+
 
     }
 
@@ -85,6 +87,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btn_equal = findViewById ( R.id.btn_equals );
 
     }
+
 
     @SuppressLint({"SetTextI18n", "NonConstantResourceId"})
     @Override
@@ -188,13 +191,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
 
             case R.id.btn_delete: {
-                if (txt_display != null){
-                    String delete = txt_display.getText ().toString ();
-                    delete = delete.substring ( delete.length () -1 ,0 );
+                String delete = txt_display.getText ().toString ();
+                if ( delete.length () >=1){
+                   delete = delete.substring ( -0,delete.length () -1 );
                     txt_display.setText ( delete );
-                }else {
-                    Toast.makeText ( this, "No Value Here !!", Toast.LENGTH_SHORT ).show ();
+                }else if (delete.length () <= 1){
+                    txt_display.setText ( "" );
                 }
+
 
             }
 
@@ -205,19 +209,24 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     }
 
+
+
+
+
     public void valueStore() {
 
         if (bol_add || bol_minus || bol_multi || bol_divide) {
             numS = Integer.parseInt ( txt_display.getText ().toString () );
-//            Toast.makeText ( this, "Data founded" + numS, Toast.LENGTH_SHORT ).show ();
+            //            Toast.makeText ( this, "Data founded" + numS, Toast.LENGTH_SHORT ).show ();
         } else {
-            ;
             num = Integer.parseInt ( txt_display.getText ().toString () );
 //            Toast.makeText ( this, "Data found" + num, Toast.LENGTH_SHORT ).show ();
         }
 
 
+
     }
+
 
     public void allLogic() {
         if (bol_add) {
